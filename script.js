@@ -77,6 +77,11 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
     document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
 
+    // Set fourth question texts
+    document.getElementById('question4Text').textContent = config.questions.fourth.text;
+    document.getElementById('yesBtn4').textContent = config.questions.fourth.yesBtn;
+    document.getElementById('noBtn4').textContent = config.questions.fourth.noBtn;
+
     // Create initial floating elements
     createFloatingElements();
 
@@ -84,7 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setupMusicPlayer();
 });
 
-// Create floating hearts and bears
+// Create floating hearts and bunnies
 function createFloatingElements() {
     const container = document.querySelector('.floating-elements');
     
@@ -97,11 +102,11 @@ function createFloatingElements() {
         container.appendChild(div);
     });
 
-    // Create bears
-    config.floatingEmojis.bears.forEach(bear => {
+    // Create bunnies
+    config.floatingEmojis.bunny.forEach(bunny => {
         const div = document.createElement('div');
-        div.className = 'bear';
-        div.innerHTML = bear;
+        div.className = 'bunny';
+        div.innerHTML = bunny;
         setRandomPosition(div);
         container.appendChild(div);
     });
@@ -181,7 +186,7 @@ function celebrate() {
     
     // Set celebration messages
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
-    document.getElementById('celebrationMessage').textContent = config.celebration.message;
+    document.getElementById('celebrationMessage').innerHTML = config.celebration.message;
     document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
     
     // Create heart explosion effect
